@@ -2,8 +2,6 @@
 
 This is a repository for the paper *When the psychedelic state’s over: limited evidence for persistent neurophysiological changes in experienced psychedelic users*. It holds the code and derived data behind results and figures in the manuscript.
 
-Preprint: [https://doi.org/10.64898/2026.03.30.711922](https://doi.org/10.64898/2026.03.30.711922)
-
 ## Authors
 
 - Maja Wójcik ([ORCID](https://orcid.org/0009-0005-3482-1119))
@@ -32,11 +30,41 @@ Maja Wójcik (Maja Willard); mayaowillard@gmail.com
 
  psychedelics; oscillatory power; complexity; effective connectivity; resting-state EEG; ecological validity.
 
+## Data availability
+
+**What is in the repo.** Project data, preprocessing pipelines, analysis code, all figures, 
+and other scripts plus documentation - used in the manuscript and its supplementary materials. 
+For both datasets (merged and separate) there's: demographic, questionnaire plus survey data (beh tables), 
+alongside EEG derivatives: trial-level power spectral density (PSD) and Lempel-Ziv complexity (LZ) data, 
+and nDTF raw matrices (effective connectivity).
+
+**What is not in the repo.** The `.cdb` study caches (~3.4 GB; can be regenerated
+with `effective_connectivity/scripts/data_preparation.py`) and the whole of `raw/` 
+(raw EEG data; needed to re-run preprocessing).
+
+## Citation
+
+If you use this code or data, please cite the most current version of the paper. 
+
+The paper is currently available as a preprint:
+
+    https://doi.org/10.64898/2026.03.30.711922
+
+The project repository and raw EEG data are published on Zenodo:
+
+  Repository (17.5MB):[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16534101.svg)](https://doi.org/10.5281/zenodo.16534101)
+
+    https://doi.org/10.5281/zenodo.16534101
+
+  Raw EEF data (22 GB):[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21709855.svg)](https://doi.org/10.5281/zenodo.21709855)
+  
+     https://doi.org/10.5281/zenodo.21709855
+     
 ## Repository layout
 
 | directory | contents |
 |---|---|
-| `raw/` | **Not distributed.** Raw EEG recordings, PsychoPy task files and per-participant behavioural logs for both sites (`dataset I_krakow`, `dataset II_warsaw`). Available as a zip on request — see [Data availability](#data-availability). |
+| `raw/` | **Not distributed.** Raw EEG recordings, PsychoPy task files and per-participant behavioural logs for both sites (`dataset I_krakow`, `dataset II_warsaw`). Available as a zip at zenodo — see [Data availability](#data-availability). |
 | `preprocessing/` | MATLAB/EEGLAB preprocessing pipeline and the ASCT pipeline `.mat` settings for each site. |
 | `beh/` | Behavioural and demographic tables. `beh_data_merged.csv` is the analysis sample (N = 115), one row per participant, and the file every analysis joins against; `beh_krk.csv` and `beh_wwa.csv` are the per-site questionnaire sources it was built from. |
 | `PSD_static_spectral/` | Spectral power analysis: notebooks that build the spectra, the derived dataframes, plots, and the R mixed models. |
@@ -103,8 +131,7 @@ Not every stage ships its inputs. Concretely:
 | `LZ_Lempel-Ziv_complexity/scripts/I_calculate_LZ.py` | no — reads `.mat` EEG exports that are not distributed |
 
 The last three are kept as the **record of how the intermediates in this
-repository were produced**, not as runnable code; they might still contain
-machine-specific paths.
+repository were produced**, not as runnable code.
 
 ## Requirements
 
@@ -127,35 +154,6 @@ avoids that.
 `pander`, `plotrix`, `tidyverse`.
 
 **MATLAB** with EEGLAB and SPM, for the preprocessing pipeline only.
-
-## Data availability
-
-**What is in the repo.** Project data, preprocessing pipelines, analysis code, all figures, 
-and other scripts plus documentation - used in the manuscript and its supplementary materials. 
-For both datasets (merged and separate) there's: demographic, questionnaire plus survey data (beh tables), 
-alongside EEG derivatives: trial-level power spectral density (PSD) and Lempel-Ziv complexity (LZ) data, 
-and nDTF raw matrices (effective connectivity).
-
-**What is not in the repo.** The `.cdb` study caches (~3.4 GB; can be regenerated
-with `effective_connectivity/scripts/data_preparation.py`) and the whole of `raw/` 
-(raw EEG data; needed to re-run preprocessing).
- 
-Raw EEG data is available upon request as a zip file (>22.4GB) from the corresponding author,
-Maja Wójcik (mayaowillard@gmail.com).
-
-## Citation
-
-If you use this code or data, please cite the most current version of the paper.
-
-The paper is currently available as a preprint:
-
-    https://doi.org/10.64898/2026.03.30.711922
-
-The repository is published and archived on Zenodo:
-
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16534101.svg)](https://doi.org/10.5281/zenodo.16534101)
-
-    https://doi.org/10.5281/zenodo.16534101
 
 ## License
 

@@ -18,9 +18,10 @@ effective_connectivity/venv/*
 .Rhistory
 
 # The whole of raw/ is untracked: the two site EEG archives are 13.0 GB and
-# 9.4 GB, and GitHub rejects any single file over 2 GB. The raw data are
-# available as a zip on request from the corresponding author -- see readme.md.
+# 9.4 GB, and GitHub rejects any single file over 2 GB. The raw EEG data are
+# available as zip at supplemental zenodo (dataset doi, see readme.md).
 raw/*
+raw.zip
 
 # Figures except pdfs (lightests)
 figures/figures/*

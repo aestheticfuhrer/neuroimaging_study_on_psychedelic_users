@@ -37,7 +37,7 @@
       "orcid": "0000-0002-4609-8029"
     }
   ],
-  "description": "Analysis code and derived data for the study on neurophysiological changes in experienced naturalistic psychedelic users. The raw EEG recordings are not included; they are available as a zip on request from the corresponding author.",
+  "description": "Analysis code and derived data for the study on neurophysiological changes in experienced naturalistic psychedelic users. The raw EEG data (22 GB) is available at supplementary zenodo doi.",
   "upload_type": "software",
   "access_right": "open",
   "license": "CC-BY-4.0",
@@ -64,6 +64,14 @@
       "relation": "isSupplementTo",
       "scheme": "doi",
       "resource_type": "publication-preprint"
+    }
+    ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.21709855",
+      "relation": "isSupplementedBy",
+      "scheme": "doi",
+      "resource_type": "dataset"
     }
   ]
 }
