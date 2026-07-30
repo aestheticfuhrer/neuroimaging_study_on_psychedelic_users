@@ -7,3 +7,21 @@
 .vscode/*
 effective_connectivity/.vscode/*
 effective_connectivity/venv/*
+.DS_Store
+*.log
+
+# Editor / session state: these carry no analysis value and were previously
+# committed by accident (a 3.4 MB .RData and 22 .Rproj.user layout files).
+.ipynb_checkpoints/
+.Rproj.user/
+.RData
+.Rhistory
+
+# The whole of raw/ is untracked: the two site EEG archives are 13.0 GB and
+# 9.4 GB, and GitHub rejects any single file over 2 GB. The raw data are
+# available as a zip on request from the corresponding author -- see readme.md.
+raw/*
+
+# Figures except pdfs (lightests)
+figures/figures/*
+!figures/figures/*.pdf

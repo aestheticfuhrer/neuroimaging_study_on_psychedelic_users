@@ -1,0 +1,30 @@
+%%{init: {"flowchart": {"htmlLabels": true, "curve": "linear"}, "themeVariables": {"fontFamily": "Helvetica, Arial, sans-serif", "fontSize": "15px"}}}%%
+flowchart TB
+    A["<b>Community sample screened via online survey</b><br/>c. 2500 respondents"]:::screen
+    A --> EX1["<b>Excluded at screening</b> (see Methods):<br/>regular empathogen / stimulant / dissociative use;<br/>benzodiazepine, opioid or synthetic-cannabinoid use;<br/>AUDIT-C item &ge; 4; psychiatric, neurological or<br/>somatic diagnosis; daily medication"]:::excluded
+    A --> B["<b>Eligible for study</b><br/>n = 250"]:::neutral
+    B --> C["<b>Participated</b><br/>N = 117"]:::neutral
+    C --> EX2["<b>Excluded</b><br/>no usable EEG recording (n = 2)"]:::excluded
+    C --> D["<b>Analyzed</b><br/>N = 115<br/><i>Lempel-Ziv complexity N = 115</i><br/><i>spectral power N = 113</i><br/><i>effective connectivity N = 107</i>"]:::neutral
+
+    D --> E["<b>psy-exp</b> (n = 58)<br/>15+ lifetime psychedelic uses<br/>30+ days abstinence"]:::psyexp
+    D --> F["<b>psy-naiv</b> (n = 57)<br/>no prior psychedelic use;<br/>willing to try"]:::psynaiv
+
+    E --> E1["<b>Dataset I &middot; Cracow</b><br/>psy-exp (n = 22)"]:::psyexp
+    E --> E2["<b>Dataset II &middot; Warsaw</b><br/>psy-exp (n = 36)"]:::psyexp
+    F --> F1["<b>Dataset I &middot; Cracow</b><br/>psy-naiv (n = 21)"]:::psynaiv
+    F --> F2["<b>Dataset II &middot; Warsaw</b><br/>psy-naiv (n = 36)"]:::psynaiv
+
+    subgraph legend [" Group "]
+        direction LR
+        LE["psy-exp"]:::psyexp
+        LN["psy-naiv"]:::psynaiv
+        LX["excluded"]:::excluded
+    end
+
+    classDef psyexp   fill:#bcbddc,stroke:#756bb1,stroke-width:2px,color:#1a1a1a;
+    classDef psynaiv  fill:#fdae6b,stroke:#e6550d,stroke-width:2px,color:#1a1a1a;
+    classDef neutral  fill:#efedf5,stroke:#9e9ac8,stroke-width:1.5px,color:#1a1a1a;
+    classDef screen   fill:#f2f2f2,stroke:#969696,stroke-width:1px,color:#1a1a1a;
+    classDef excluded fill:#f9d6d5,stroke:#c0392b,stroke-width:1.5px,color:#7b241c;
+    class legend neutral;

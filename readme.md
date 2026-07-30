@@ -1,31 +1,162 @@
-# When the psychedelic state's over… do neurophysiological changes persist? Evidence from a population of experienced naturalistic psychedelic users
+# When the psychedelic state’s over: limited evidence for persistent neurophysiological changes in experienced psychedelic users
 
-This repository contains data and code for the paper: *"When the psychedelic state's over… do neurophysiological changes persist? Evidence from a population of experienced naturalistic psychedelic users"*
+This is a repository for the paper *When the psychedelic state’s over: limited evidence for persistent neurophysiological changes in experienced psychedelic users*. It holds the code and derived data behind results and figures in the manuscript.
+
+Preprint: [https://doi.org/10.64898/2026.03.30.711922](https://doi.org/10.64898/2026.03.30.711922)
 
 ## Authors
 
 - Maja Wójcik ([ORCID](https://orcid.org/0009-0005-3482-1119))
-- Paweł Lenartowicz ([ORCID](https://orcid.org/0000-0002-6906-7217))
 - Paweł Orłowski ([ORCID](https://orcid.org/0000-0003-1308-7478))
 - Stanisław Adamczyk ([ORCID](https://orcid.org/0009-0009-8639-8905))
+- Paweł Lenartowicz ([ORCID](https://orcid.org/0000-0002-6906-7217))
 - Justyna Hobot ([ORCID](https://orcid.org/0000-0002-4464-6415))
 - Michał Wierzchoń ([ORCID](https://orcid.org/0000-0002-7347-2696))
 - Michał Bola ([ORCID](https://orcid.org/0000-0002-4609-8029))
 
+## Corresponding author
+
+Maja Wójcik (Maja Willard); mayaowillard@gmail.com
+
 ## Abstract
 
-**Background:** Contemporary research implies that psychedelics induce notable neurophysiological changes, some lasting weeks to months after a single dose. However, most evidence derives from acute administration studies, and only limited short-term follow-ups. Long-term naturalistic psychedelic users remain critically underexamined, yet may exhibit distinct neurobiological profiles that could inform our understanding of persistent alterations following repeated exposure.
+**Background.** Psychedelics are reported to induce neurophysiological changes persisting weeks after a single dose in both patients and healthy volunteers, but the evidence comes almost entirely from small trials with short follow-ups. Real-world use involves millions of people yet remains critically underexamined. Whether they show distinct neurobiological profiles is unknown, and the answer speaks to both the persistent effects of repeated exposure and the generalizability of trial findings.
 
-**Methods:** We recorded resting-state EEG in 57 long-term psychedelic users (abstinent ≥30 days) and 49 matched non-users across two independent sites under eyes-open and eyes-closed conditions. We analyzed oscillatory power, signal complexity, and source-localized effective connectivity, focusing on five common frequency bands and regions comprising the: Default Mode, Salience and Central Executive Networks. Statistical analyses included linear mixed-effects models for power and complexity and a rank-based analytical method with ordinary least squares regression and randomization inference for effective connectivity.
+**Methods.** We compared resting-state EEG (N=115) in experienced psychedelic users (N=58; 22 female), abstinent at least 30 days, with matched psychedelic-naive participants (N=57; 24 female), recorded at two sites under eyes-open and eyes-closed conditions. Targeting reported acute and post-acute signatures, we analysed oscillatory power, Lempel-Ziv complexity, and source-localized effective connectivity within and between default mode, central executive, and salience networks.
 
-**Results:** Contrary to hypotheses, we observed predominantly null findings. No significant group effects emerged for oscillatory power. Complexity exhibited lower values in users, only in the eyes-open condition. Effective connectivity revealed no alterations of within- or between-network connections. Exploratory analyses identified some isolated small effects, but none survived multiple comparisons correction.
+**Results.** Oscillatory power showed no group main effects. Beta power, gamma power, and complexity differed between groups in the eyes-open condition only, surviving correction across bands; but were attenuated, and for complexity removed, once pseudoreplication and meditation and cannabis use were accounted for. No hypothesized within- or between-network connectivity difference survived correction; exploratory analyses identified sporadic effects.
 
-**Conclusions:** Long-term naturalistic psychedelic users showed largely non-significant differences in oscillatory power, complexity, and network connectivity patterns — any of the effects commonly observed in acute administration studies. These findings warrant some considerations: whether psychedelics' neurophysiological signatures persist during abstinence regardless of repeated prior use, or whether such effects are the reflection of homeostatic receptor adaptation, individual variability, or impacting environmental factors. The subtle or incongruous effects we observed underscore the demand for methodological pluralism and careful attention to temporal and contextual variables in future research. Replication studies, more trials accommodating ecologically valid populations and larger samples will be essential to advancing the emerging field of psychedelic neuroscience.
+**Conclusions.** Signatures reported in clinical trials did not straightforwardly generalize to experienced psychedelic users, a pattern consistent with state-bound effects, homeostatic adaptation, or trait variability. Subtle or incongruous findings argue for methodological pluralism and caution against inferring persistent neurophysiological signatures from trial data alone. Replication, trials accommodating ecologically valid populations, and larger samples will be essential to advancing the emerging field of psychedelic neuroscience.
 
 ## Keywords
 
-psychedelics, oscillatory power, complexity, effective connectivity, naturalistic users, resting-state networks, EEG, ecological validity
+ psychedelics; oscillatory power; complexity; effective connectivity; resting-state EEG; ecological validity.
+
+## Repository layout
+
+| directory | contents |
+|---|---|
+| `raw/` | **Not distributed.** Raw EEG recordings, PsychoPy task files and per-participant behavioural logs for both sites (`dataset I_krakow`, `dataset II_warsaw`). Available as a zip on request — see [Data availability](#data-availability). |
+| `preprocessing/` | MATLAB/EEGLAB preprocessing pipeline and the ASCT pipeline `.mat` settings for each site. |
+| `beh/` | Behavioural and demographic tables. `beh_data_merged.csv` is the analysis sample (N = 115), one row per participant, and the file every analysis joins against; `beh_krk.csv` and `beh_wwa.csv` are the per-site questionnaire sources it was built from. |
+| `PSD_static_spectral/` | Spectral power analysis: notebooks that build the spectra, the derived dataframes, plots, and the R mixed models. |
+| `LZ_Lempel-Ziv_complexity/` | Lempel-Ziv complexity: the calculation script and the merged trial-level `complexity_data.csv`. |
+| `effective_connectivity/` | DTF effective connectivity: the 20 measurement `.xlsx` files, the analysis package under `scripts/`, and the extracted specification-curve caches. |
+| `figures/` | One script per manuscript figure (`figures/scripts/`) and the rendered output (`figures/figures/`). Only the PDFs are committed; the PNG and SVG versions are regenerated by re-running the scripts. See `figures/scripts/README.md`. |
+
+### Participant identifiers
+
+Cracow participants carry two numberings. `sid` (101-145) is the one used by the
+raw recordings and by every derived dataset; the site also assigned a second
+numbering that encodes group membership (101-121 psychedelic-experienced,
+901-921 psychedelic-naive), which the effective-connectivity tables use. The two
+collide — `sid` 101 is a naive participant, while `new_names` 101 is `sid` 103,
+an experienced one — so they must never be joined on the bare integer.
+`beh_krk.csv` carries both columns and is the crosswalk between them. Warsaw
+participants carry a single numbering, exposed as `sid` and as
+`participant_id` (`sub-002` = `sid` 2).
+
+Analyses do not all run on the full N = 115. Lempel-Ziv complexity uses all 115.
+Spectral power uses 113, because two psychedelic-naive participants have no
+usable spectra. Effective connectivity uses 107 (Cracow 40, Warsaw 67), the
+participants for whom nDTF matrices were estimated; one of them contributes
+eyes-open only. Each script prints the sample it actually used when it runs.
+
+The behavioural figures (S2-S9) show questionnaire completers only, so their
+per-panel n is lower again and is printed in every panel caption.
+
+## Pipeline
+
+The three analysis branches are independent and all start from the preprocessed EEG:
+
+```
+raw/  --[preprocessing/ MATLAB + EEGLAB]-->  cleaned, epoched .set
+                    |
+   +----------------+--------------------+---------------------------+
+   |                                     |                           |
+ export .mat                       spectral tensors            DTF connectivity
+   |                                     |                           |
+ LZ_Lempel-Ziv_complexity/           PSD_static_spectral/       effective_connectivity/
+ I_calculate_LZ.py -> LZs/*.txt      *.ipynb -> PSD_trials_sep/  data/*.xlsx
+   |                                     |                           |
+ complexity_data.csv                 mixed_models/*.R           data_preparation.py -> *.cdb
+   |                                     |                           |
+   +----------------+--------------------+---------------------------+
+                    |
+              figures/scripts/  ->  figures/figures/
+```
+
+## What can be re-run from this repository
+
+Not every stage ships its inputs. Concretely:
+
+| stage | runs from a clean clone? |
+|---|---|
+| `figures/scripts/` Figures 1, 2, 3, 4, S2-S9 | **yes** |
+| `effective_connectivity/scripts/data_preparation.py` | **yes** (the 20 `.xlsx` are complete), but it runs 2 x 10,000 permutations and writes ~3.4 GB of `.cdb` caches |
+| `effective_connectivity/scripts/results.py` and `results.ipynb` | needs those `.cdb` caches; set `EC_CACHE` if you keep them outside the repository |
+| `LZ_Lempel-Ziv_complexity/scripts/II_lmer_models_LZ.R` | **yes**, via the shipped `complexity_data.csv` |
+| `PSD_static_spectral/scripts/mixed_models/*.R` | **yes** |
+| `figures/scripts/06_figureS10_pvalues.py` (Figure S10) | needs the `.cdb` caches — build them with `data_preparation.py` first |
+| `preprocessing/PSD_LZ_preprocessing_pipeline_both.m` | no — a template; fill in `root`, `pathEEGLAB`, `pathSPM` and supply the raw EEG |
+| `PSD_static_spectral/scripts/*.ipynb` | no — reads intermediate spectral tensors that are not distributed |
+| `LZ_Lempel-Ziv_complexity/scripts/I_calculate_LZ.py` | no — reads `.mat` EEG exports that are not distributed |
+
+The last three are kept as the **record of how the intermediates in this
+repository were produced**, not as runnable code; they might still contain
+machine-specific paths.
+
+## Requirements
+
+**Python 3.9+** — one install covers every Python script in the repository, the
+figures included. Versions are unpinned.
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate                # Windows: .venv\Scripts\activate
+pip install -r effective_connectivity/scripts/requirements.txt
+```
+
+If `python3` on your PATH is a bare interpreter with no scientific packages, the
+scripts stop at `ModuleNotFoundError`; the virtual environment above is what
+avoids that.
+
+**R 4.x** — across the four R scripts:
+`dplyr`, `tidyr`, `ggplot2`, `scales`, `svglite`, `ragg`, `grid`, `patchwork`,
+`lmerTest`, `lme4`, `emmeans`, `effectsize`, `performance`, `ggsignif`,
+`pander`, `plotrix`, `tidyverse`.
+
+**MATLAB** with EEGLAB and SPM, for the preprocessing pipeline only.
+
+## Data availability
+
+**What is in the repo.** Project data, preprocessing pipelines, analysis code, all figures, 
+and other scripts plus documentation - used in the manuscript and its supplementary materials. 
+For both datasets (merged and separate) there's: demographic, questionnaire plus survey data (beh tables), 
+alongside EEG derivatives: trial-level power spectral density (PSD) and Lempel-Ziv complexity (LZ) data, 
+and nDTF raw matrices (effective connectivity).
+
+**What is not in the repo.** The `.cdb` study caches (~3.4 GB; can be regenerated
+with `effective_connectivity/scripts/data_preparation.py`) and the whole of `raw/` 
+(raw EEG data; needed to re-run preprocessing).
+ 
+Raw EEG data is available upon request as a zip file (>22.4GB) from the corresponding author,
+Maja Wójcik (mayaowillard@gmail.com).
+
+## Citation
+
+If you use this code or data, please cite the most current version of the paper.
+
+The paper is currently available as a preprint:
+
+    https://doi.org/10.64898/2026.03.30.711922
+
+The repository is published and archived on Zenodo:
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.16534101.svg)](https://doi.org/10.5281/zenodo.16534101)
+
+    https://doi.org/10.5281/zenodo.16534101
 
 ## License
 
-CC-BY-4.0
+CC-BY-4.0 — see [LICENSE](LICENSE).

@@ -1,57 +1,69 @@
 {
-  "title": "When the psychedelic state's over… do neurophysiological changes persist? Evidence from a population of experienced naturalistic psychedelic users",
+  "title": "When the psychedelic state’s over: limited evidence for persistent neurophysiological changes in experienced psychedelic users",
   "creators": [
     {
       "name": "Wójcik, Maja",
-      "affiliation": "",
+      "affiliation": "Centre for Brain Research, Jagiellonian University; Institute of Psychology, Jagiellonian University, Krakow, Poland; Society for Open Science, Poland",
       "orcid": "0009-0005-3482-1119"
     },
     {
-      "name": "Lenartowicz, Paweł",
-      "affiliation": "",
-      "orcid": "0000-0002-6906-7217"
-    },
-    {
       "name": "Orłowski, Paweł",
-      "affiliation": "",
+      "affiliation": "Institute of Psychology, Jagiellonian University, Krakow, Poland",
       "orcid": "0000-0003-1308-7478"
     },
     {
       "name": "Adamczyk, Stanisław",
-      "affiliation": "",
+      "affiliation": "Centre for Brain Research, Jagiellonian University; Institute of Psychology, Jagiellonian University, Krakow, Poland",
       "orcid": "0009-0009-8639-8905"
     },
     {
+      "name": "Lenartowicz, Paweł",
+      "affiliation": "Centre for Brain Research, Jagiellonian University; Institute of Psychology, Jagiellonian University, Krakow, Poland; Society for Open Science, Poland",
+      "orcid": "0000-0002-6906-7217"
+    },
+    {
       "name": "Hobot, Justyna",
-      "affiliation": "",
+      "affiliation": "Centre for Brain Research, Jagiellonian University; Institute of Psychology, Jagiellonian University, Krakow, Poland",
       "orcid": "0000-0002-4464-6415"
     },
     {
       "name": "Wierzchoń, Michał",
-      "affiliation": "",
+      "affiliation": "Centre for Brain Research, Jagiellonian University; Institute of Psychology, Jagiellonian University, Krakow, Poland",
       "orcid": "0000-0002-7347-2696"
     },
     {
       "name": "Bola, Michał",
-      "affiliation": "",
+      "affiliation": "Centre for Brain Research, Jagiellonian University, Krakow, Poland",
       "orcid": "0000-0002-4609-8029"
     }
   ],
-  "description": "Research data and code for the study on neurophysiological changes in experienced naturalistic psychedelic users.",
+  "description": "Analysis code and derived data for the study on neurophysiological changes in experienced naturalistic psychedelic users. The raw EEG recordings are not included; they are available as a zip on request from the corresponding author.",
+  "upload_type": "software",
   "access_right": "open",
   "license": "CC-BY-4.0",
   "keywords": [
     "psychedelics",
-    "neurophysiology",
     "EEG",
-    "neuroscience"
+    "neuroscience",
+    "oscillatory power",
+    "complexity",
+    "effective connectivity",
+    "resting-state"
   ],
   "contributors": [
     {
       "name": "Wójcik, Maja",
       "type": "ContactPerson",
-      "affiliation": "",
+      "affiliation": "Centre for Brain Research, Jagiellonian University; Institute of Psychology, Jagiellonian University, Krakow, Poland; Society for Open Science, Poland",
       "orcid": "0009-0005-3482-1119"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.64898/2026.03.30.711922",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-preprint"
     }
   ]
 }

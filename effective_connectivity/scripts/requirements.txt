@@ -1,0 +1,11 @@
+statsmodels
+networkx
+nilearn
+tqdm
+matplotlib
+openpyxl
+pandas
+numpy
+joblib
+scipy
+patsy

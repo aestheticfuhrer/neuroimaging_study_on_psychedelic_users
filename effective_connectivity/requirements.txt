@@ -1,8 +1,0 @@
-statsmodels
-networkx
-tqdm
-matplotlib
-openpyxl
-pandas
-numpy
-joblib
